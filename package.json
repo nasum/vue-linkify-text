@@ -2,12 +2,26 @@
   "name": "vue-linkify-text",
   "version": "0.1.0",
   "private": true,
+  "main": "dist/vue-linkify-text.common.js",
+  "types": "dist/src/index.d.ts",
+  "browser": "dist/vue-linkify-text.umd.js",
+  "jsdelivr": "dist/vue-linkify-text.umd.min.js",
+  "unpkg": "dist/vue-linkify-text.umd.min.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "vue-cli-service serve ./src/index.ts",
+    "build": "vue-cli-service build --target lib --name vue-linkify-text ./src/index.ts",
+    "output-type": "tsc --build tsconfig.json",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
+  "files": [
+    "dist/vue-your-plugin.common.js",
+    "dist/vue-your-plugin.umd.min.js",
+    "dist/vue-your-plugin.umd.js",
+    "dist/vue-your-plugin.esm.js",
+    "src",
+    "dist/src/index.d.ts"
+  ],
   "dependencies": {
     "vue": "^3.0.0"
   },
@@ -26,6 +40,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-vue": "^7.0.0-0",
+    "linkify-it": "^3.0.2",
     "prettier": "^1.19.1",
     "typescript": "~3.9.3",
     "vue-jest": "^5.0.0-0"
