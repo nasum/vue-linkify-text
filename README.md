@@ -5,16 +5,17 @@
 
 ## Usage
 ```HTML
-<VueLinkifyText :text="hello"></VueLinkifyText>
+<LinkifyText :text="hello https://example.com"></LinkifyText>
 ```
-```javascript
-import { VueLinkifyText } from 'vue-linkify-text'
 
-export default {
-  components: {
-    VueLinkifyText
-  }
-}
+```javascript
+import { createApp } from "vue";
+import App from "./App.vue";
+import VueLinkifyText from "@/index";
+
+const app = createApp(App);
+app.use(VueLinkifyText);
+app.mount("#app");
 ```
 ## API
 
@@ -46,12 +47,4 @@ yarn test:unit
 ### Lints and fixes files
 ```
 yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-### Update the API section of README.md with generated documentation
-```
-yarn run doc:build
 ```
