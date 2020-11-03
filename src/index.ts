@@ -2,10 +2,7 @@ import { h, defineComponent } from "vue";
 import LinkifyIt from "linkify-it";
 
 function escape(str: string): string {
-  return str
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
+  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
 export const VueLinkifyText = defineComponent({
@@ -13,12 +10,12 @@ export const VueLinkifyText = defineComponent({
   props: {
     tag: {
       type: String,
-      default: "div"
+      default: "div",
     },
     text: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     content(): string {
@@ -26,7 +23,7 @@ export const VueLinkifyText = defineComponent({
       const matches = LinkifyIt().match(tmpText);
       const result = [];
       let last = 0;
-      matches.forEach(match => {
+      matches.forEach((match) => {
         if (last < match.index) {
           result.push(
             escape(tmpText.slice(last, match.index)).replace(/\r?\n/g, "<br>")
@@ -43,16 +40,16 @@ export const VueLinkifyText = defineComponent({
         result.push(escape(tmpText.slice(last)).replace(/\r?\n/g, "<br>"));
       }
       return result.join("");
-    }
+    },
   },
   render() {
     return h(this.tag, { innerHTML: this.content });
-  }
+  },
 });
 
 export default {
   // eslint-disable-next-line
   install(Vue: any) {
     Vue.component(VueLinkifyText.name, VueLinkifyText);
-  }
+  },
 };
