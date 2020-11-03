@@ -1,27 +1,8 @@
 {
   "name": "vue-linkify-text",
   "version": "0.1.0",
-  "private": true,
-  "main": "dist/vue-linkify-text.common.js",
-  "types": "dist/src/index.d.ts",
+  "author": "nasum<tomato.wonder.life@gmail.com>",
   "browser": "dist/vue-linkify-text.umd.js",
-  "jsdelivr": "dist/vue-linkify-text.umd.min.js",
-  "unpkg": "dist/vue-linkify-text.umd.min.js",
-  "scripts": {
-    "serve": "vue-cli-service serve ./src/index.ts",
-    "build": "vue-cli-service build --target lib --name vue-linkify-text ./src/index.ts",
-    "output-type": "tsc --build tsconfig.json",
-    "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
-  },
-  "files": [
-    "dist/vue-your-plugin.common.js",
-    "dist/vue-your-plugin.umd.min.js",
-    "dist/vue-your-plugin.umd.js",
-    "dist/vue-your-plugin.esm.js",
-    "src",
-    "dist/src/index.d.ts"
-  ],
   "dependencies": {
     "vue": "^3.0.0"
   },
@@ -44,5 +25,33 @@
     "prettier": "^1.19.1",
     "typescript": "~3.9.3",
     "vue-jest": "^5.0.0-0"
-  }
+  },
+  "files": [
+    "dist/vue-your-plugin.common.js",
+    "dist/vue-your-plugin.umd.min.js",
+    "dist/vue-your-plugin.umd.js",
+    "dist/vue-your-plugin.esm.js",
+    "src/*",
+    "dist/src/index.d.ts",
+    "dist/*.map"
+  ],
+  "homepage": "https://github.com/nasum/vue-linkify-text",
+  "jsdelivr": "dist/vue-linkify-text.umd.min.js",
+  "keywords": [
+    "component",
+    "vue"
+  ],
+  "license": "MIT",
+  "main": "dist/vue-linkify-text.umd.js",
+  "module": "dist/vue-linkify-text.common.min.js",
+  "private": false,
+  "repository": "git@github.com:nasum/vue-linkify-text.git",
+  "scripts": {
+    "build": "vue-cli-service build --name vue-linkify-text --entry ./src/index.ts --target lib",
+    "lint": "vue-cli-service lint",
+    "serve": "vue-cli-service serve ./example/main.ts --open",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "types": "dist/src/index.d.ts",
+  "unpkg": "dist/vue-linkify-text.umd.min.js"
 }
